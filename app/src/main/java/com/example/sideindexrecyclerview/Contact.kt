@@ -114,3 +114,19 @@ data class Contact(val name: String)
         }
     }
 
+package amplify.call.models.model
+
+import amplify.call.room.RoomTables
+import androidx.room.ColumnInfo
+import androidx.room.Entity
+import androidx.room.PrimaryKey
+
+@Entity(tableName = RoomTables.TBL_CONTACT)
+data class ContactsModel(
+    @ColumnInfo(name = "contactId") val contactId: String,
+    @ColumnInfo(name = "contactName") val contactName: String,
+    @ColumnInfo(name = "contactNumber") val contactNumber: String,
+    @PrimaryKey(autoGenerate = true) var id: Int = 0
+)
+
+data class Country(val name: String, val code: String)
